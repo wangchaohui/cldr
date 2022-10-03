@@ -147,10 +147,7 @@ public class JsonConverter {
             if (possibleAttributeKeys != null) {
                 for (final String attribute : possibleAttributeKeys) {
                     if (isDistinguishing(dtdType, element, attribute)) {
-                        if (attribute.equals("alt")) {
-                            // TODO fix
-                            System.err.println("Warning: Unhandled ALT: " + parts.toString());
-                        }
+                        if (attribute.equals("alt")) continue; // TODO fix
                         String attributeValue = parts.getAttributeValue(i, attribute);
                         out.addElement("_" + attribute);
                         if (attributeValue == null) {
